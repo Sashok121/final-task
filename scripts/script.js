@@ -2,8 +2,7 @@ var slyders= {
 	slides : document.getElementById('slyders').children,
 	frame : 0,
 	bars : [],
-	barChenge : function(bar){
-		
+	barChenge : function(bar){		
 		var barP = bar.getElementsByTagName('p');
 		[].forEach.call(barP, function(valueP){
 					valueP.style.display = "none"
@@ -26,19 +25,18 @@ var slyders= {
 	},
 	chenge : function(lastIndex, index){
 		var that = this;
-		that.slides[index].style.display = "block";
-		that.slides[lastIndex].style.display = "none";
+		if(lastIndex != index){
+			that.slides[index].style.display = "block";
+			that.slides[lastIndex].style.display = "none";
 		
-		[].forEach.call(that.slides[index].classList,function(classlist){
-			if (classlist === "slide1") {
-				that.bars.forEach(function(bar){
-					that.barChenge(bar);
-				});
-				
-				
-			};
-		});
-		
+			[].forEach.call(that.slides[index].classList,function(classlist){
+				if (classlist === "slide1") {
+					that.bars.forEach(function(bar){
+						that.barChenge(bar);
+					});			
+				}
+			});		
+		}
 		
 	}	
 
