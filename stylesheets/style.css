@@ -11,10 +11,10 @@ body{
 	width: 1024px;
 	margin: 0 auto;
 	background-color: white;
-	background-position: center top;
+	background-position: left top;
 	background-repeat: no-repeat;
-	background-size: 93%;
-	background-image: url(../assets/images/d1.jpg);
+	background-size: 100%;
+	background-image: url(../assets/images/bk.png);
 
 }
 header{
@@ -84,6 +84,7 @@ nav ul li:hover, nav ul li.activity{
 }
 .slide1{
 	display: block;
+	color: rgb(29, 28, 27);
 }
 .slyder h2{
 	color: rgb(67, 33, 113);
@@ -114,7 +115,7 @@ nav ul li:hover, nav ul li.activity{
 	border-radius: 0 40px;
 	overflow: hidden;
 	background-color: white;	
-	border: 1px solid black;
+	border: 2px solid rgb(67, 33, 113);
 	position: relative;
 	box-shadow: rgba(0,0,0,.5) 0 5px 5px;
 }
@@ -133,7 +134,7 @@ nav ul li:hover, nav ul li.activity{
 	margin:0;
 	margin-left: 50px;
 	padding: 11px 0 15px;
-	border-top: 3px solid black;
+	border-top: 3px solid rgb(67, 33, 113);
 }
 .x_axis li{
 	display: block;
@@ -149,7 +150,7 @@ nav ul li:hover, nav ul li.activity{
 	height: 87%;
 	width: 5px;
 	list-style: none;
-	background-color: grey;
+	background-color: rgb(218, 217, 218);
 	padding-left: 51px;
 	margin: 0;
 	padding-bottom: 50px;
@@ -198,6 +199,7 @@ div.bar{
 .bar>span{
 	display: block;
 	margin-top: 9px;
+	color: white;
 }
 .bar p{
 	position: absolute;
