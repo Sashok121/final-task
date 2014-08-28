@@ -1,0 +1,237 @@
+@font-face{
+	font-family: "FrutigerLTStd";
+	src: url(fonts/frutiger_lt_std_bold.ttf);
+}
+@font-face{
+	font-family: "Frutiger";
+	src: url(fonts/frutiger-black.ttf);
+}
+body{
+	font-family: "FrutigerLTStd";
+	width: 1024px;
+	margin: 0 auto;
+	background-color: white;
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-size: 93%;
+	background-image: url(../assets/images/d1.jpg);
+
+}
+header{
+	min-height: 65px;
+}
+nav{	
+	background-image: -webkit-linear-gradient(top, rgb(251, 251, 251), rgb(232, 232, 232));
+	background-image: linear-gradient(top, rgb(251, 251, 251), rgb(232, 232, 232));
+	box-shadow: rgba(0,0,0,.21) 0px 1px 2px;	
+}
+nav ul{	
+height: 42px;
+margin: 0;
+padding: 0;
+}
+nav ul li{
+	display: inline-block;
+	font-family: "FrutigerLTStd";
+	height: 25px;
+	padding: 10.5px 40px;
+	float: left;
+	list-style-type: none;	
+	color: rgb(103, 103, 103);
+	border-right: 1px solid rgb(103, 103,103);	
+}
+li.home{
+	width: 63px;
+	padding-left: 0;
+	padding-right: 0;
+}
+.home img{
+	width: 50%;
+	padding-left: 25%;
+}
+nav ul li:hover, nav ul li.activity{
+	cursor: pointer;
+	background-image: -webkit-linear-gradient(top, rgb(239, 239, 239), rgb(255, 255, 255));
+	background-image: linear-gradient(top, rgb(239, 239, 239), rgb(255, 255, 255));
+}
+.closeNav{	
+	height: 5px;	
+	position: relative;
+	background-repeat: no-repeat;
+	background-position: center top;	
+}
+.closeNav:after{
+	content: "";
+	width: 225px;
+	height: 24px;	
+	background-image: url(../assets/images/bk_close.png);	
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-size: auto 100%;
+	position: absolute;
+	left: 40%;
+	bottom: -22px;	
+}
+.closeNav:hover{
+	cursor: pointer;
+}
+#slyders{	
+	margin-left: 60px;	
+	padding-top: 15px;
+}
+.slyders{
+	display: none;
+}
+.slide1{
+	display: block;
+}
+.slyder h2{
+	color: rgb(67, 33, 113);
+	font-family: "Frutiger";
+	font-weight: normal;
+	font-size: 1.7em;
+	margin: 0 auto;
+	text-align: center;
+}
+.slyder div{
+	margin-top: 88px;
+	
+}
+.slyder div h3{
+	display: inline;
+	font-size: .9em;
+	font-weight: bold;
+	margin: 57px 0 0 60px;
+	float: left;
+	
+
+}
+.slyder div section{
+	width: 597px;
+	height: 360px;
+	float: left;
+	margin-left: 10px;
+	border-radius: 0 40px;
+	overflow: hidden;
+	background-color: white;	
+	border: 1px solid black;
+	position: relative;
+	box-shadow: rgba(0,0,0,.5) 0 5px 5px;
+}
+.slyder div section>span{
+	display: block;
+	position: absolute;
+	width: 100%;
+	padding-top: 20px;
+	text-align: center;
+}
+.x_axis{
+	width: 92%;
+	position: absolute;
+	bottom: 0;
+	list-style: none;
+	margin:0;
+	margin-left: 50px;
+	padding: 11px 0 15px;
+	border-top: 3px solid black;
+}
+.x_axis li{
+	display: block;
+}
+.x_axis li span{
+	width:  97%;
+	float: right;
+	display: block;
+	text-align: center;
+}
+.y_axis{
+	position: absolute;
+	height: 87%;
+	width: 5px;
+	list-style: none;
+	background-color: grey;
+	padding-left: 51px;
+	margin: 0;
+	padding-bottom: 50px;
+}
+
+.y_axis li{
+	width: 10px;
+	height: 33px;
+	display: block;
+	position: relative;
+	border-bottom:2px solid grey;
+}
+.y_axis li span {
+	margin: 23px 0 0 -15px;
+	display: block;
+	position: absolute;
+}
+div.bars{
+	position: absolute;
+	width: 92%;
+	height: 87%;
+	margin:0 0 0 50px;
+}
+div.bar_group{
+	width: 50%;
+	height:100%;
+	margin: 0 auto;
+	position: relative;
+}
+div.bar{
+	margin: 0;
+	position: absolute;
+	overflow: hidden;
+	width: 50%;
+	bottom: 0;
+	border-radius: 15px 15px 0 0;
+	text-align: center;
+
+}
+.fig0{
+	background-color: blue;
+}
+.fig1{
+	background-color: red;
+}
+.bar>span{
+	display: block;
+	margin-top: 9px;
+}
+.bar p{
+	position: absolute;
+	width: 100%;
+	color: white;
+	text-align: center;
+	font-size: .65em;
+	margin:0; 
+	display: none;
+
+
+}
+.bar p:last-of-type{
+	width: 60%;
+	bottom: 5px;
+	margin-left: 20px;
+}
+.slyder>div>div:last-of-type{
+	width: 9%;
+	float: left;
+	margin-left: 14px;
+	margin-top: 262px;
+}
+.slyder>div>div:last-of-type img{
+	width: 100%;
+}
+.slyder>p {
+	width: 56%;
+	float: left;
+	font-size: .85em;
+	margin-top: 67px;
+	margin-left:5px;
+	margin-bottom: 0;
+}
+.slyder>p:last-of-type{
+	margin-top: 0;
+}
