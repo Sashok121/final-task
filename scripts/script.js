@@ -13,34 +13,35 @@ var slyders= {
 		var timer = setInterval(function(){
 			if( bar.maxHeight > parseFloat(bar.style.height)){
 				bar.style.height = parseInt(parseFloat(bar.style.height) * 10 + 1)/10  + "%";
+				
 			}
 			else{
+				//bar.style.height = bar.maxHeight+"%";
 				
 				[].forEach.call(barP, function(valueP){
 					valueP.style.display = "block"
 				});				
 				clearInterval(timer);
 			}
-		},25);
+			bar.getElementsByTagName('span')[0].innerText = parseInt(parseFloat(bar.style.height) /10*9)/10;
+		}, 15);
 		
 	},
 	chenge : function(lastIndex, index){
-		var that = this;
-		that.slides[index].style.display = "block";
-		that.slides[lastIndex].style.display = "none";
-		
-		[].forEach.call(that.slides[index].classList,function(classlist){
-			if (classlist === "slide1") {
-				that.bars.forEach(function(bar){
-					that.barChenge(bar);
-				});
-				
-				
-			};
-		});
-		
-		
-	}	
+		if (lastIndex != index){
+			var that = this;
+			that.slides[index].style.display = "block";
+			that.slides[lastIndex].style.display = "none";
+			
+			[].forEach.call(that.slides[index].classList,function(classlist){
+				if (classlist === "slide1") {
+					that.bars.forEach(function(bar){
+						that.barChenge(bar);
+					});
+				};
+			});
+		}	
+	}
 
 }
 window.onload = function(){
@@ -84,7 +85,7 @@ window.onload = function(){
 		
 		[].forEach.call(bar_group.children,function(bar){
 			bar.position = barPosition;
-			bar.maxHeight = parseInt(bar.getElementsByTagName('span')[0].innerText/9*1000)/10;
+			bar.maxHeight = bar.getElementsByTagName('span')[0].innerText/9*100;
 			slyders.bars.push(bar);
 			slyders.barChenge(bar);
 			barPosition += parseInt(100/bar_group.children.length);
