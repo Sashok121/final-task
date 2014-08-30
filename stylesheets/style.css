@@ -6,14 +6,22 @@
 	font-family: "Frutiger";
 	src: url(fonts/frutiger-black.ttf);
 }
+@font-face{
+	font-family: "Frutiger47Cn";
+	src: url(fonts/frutiger-47-light-condensed1.ttf);
+}
+
+
+
+
 body{
 	font-family: "FrutigerLTStd";
 	width: 1024px;
 	margin: 0 auto;
 	background-color: white;
-	background-position: left top;
+	background-position: center top;
 	background-repeat: no-repeat;
-	background-size: 100%;
+	
 	background-image: url(../assets/images/bk.png);
 
 }
@@ -76,14 +84,20 @@ nav ul li:hover, nav ul li.activity{
 	cursor: pointer;
 }
 #slyders{	
+	height: 700px;
 	margin-left: 60px;	
 	padding-top: 15px;
+	position: relative;
+	overflow: hidden;
 }
-.slyders{
-	display: none;
+.slyder{
+	position: absolute;
+	visibility: hidden;
+	width: 100%;
+	transition: all 1s linear;
 }
 .slide1{
-	display: block;
+	visibility: visible;
 	color: rgb(29, 28, 27);
 }
 .slyder h2{
@@ -107,7 +121,7 @@ nav ul li:hover, nav ul li.activity{
 	
 
 }
-.slyder div section{
+.slide1 div section{
 	width: 597px;
 	height: 360px;
 	float: left;
@@ -217,13 +231,13 @@ div.bar{
 	bottom: 5px;
 	margin-left: 20px;
 }
-.slyder>div>div:last-of-type{
+.slide1>div>div:last-of-type{
 	width: 9%;
 	float: left;
 	margin-left: 14px;
 	margin-top: 262px;
 }
-.slyder>div>div:last-of-type img{
+.slide1>div>div:last-of-type img{
 	width: 100%;
 }
 .slyder>p {
@@ -234,6 +248,168 @@ div.bar{
 	margin-left:5px;
 	margin-bottom: 0;
 }
-.slyder>p:last-of-type{
+.slide1>p:last-of-type{
 	margin-top: 0;
+}
+.slide2 div{
+	width: 40%;	
+	float: left;
+	margin-top: 33px;
+	margin-left: 40px;
+	background: -webkit-linear-gradient(top, rgba(232, 232, 232, .7), rgba(255, 255, 255, .7));
+	padding: 0;
+}
+
+.slide2 section {
+	margin: 0;
+	padding: 10px 7px 8px 14px;
+	background: -webkit-linear-gradient(top, rgba(255, 255, 255, .5), rgba(156, 156, 156, .5));
+}
+.slide2 section>input{	
+	width: 168px;
+	margin: 0 3px 0 5px;
+	padding: 5px;
+	color: rgb(182, 182, 182);
+	font-weight: bold;
+	text-align: center;
+	font-size: .7em;
+}
+.slide2 section>input::-webkit-input-placeholder{
+	color: rgb(182, 182, 182);
+	font-weight: bold;
+	text-align: center;
+	font-size: .7em;
+}
+.slide2 button{
+	border-color: rgba(217, 51, 140, .5);
+	border-width: 1px;
+	background-color: white;
+	padding: 6px 9px;
+	color: white;
+	background-image: -webkit-linear-gradient(top, rgb(220, 153, 198), rgb(227, 30, 134));
+}
+.slide2 .help{
+	width: 30px;
+	height: 30px;
+	float: right;
+	color: rgb(80, 45, 128);
+	border-radius: 50%;
+	font-size: 1.5em;
+	font-weight: bold;
+	border-color: rgba(213, 213, 213, .5);
+	background-image: -webkit-linear-gradient(top, rgb(219, 219, 219), rgb(231,231,231));
+	padding: 0;
+}
+.slide2>div>p {
+	font-size: .66em;
+	font-family: "Frutiger47Cn", "Frutiger 47LightCn";
+	margin: 0;
+	color: rgb(166,164,165);
+	font-weight: 600;
+	line-height: 1em;
+	padding: 4px 45px 0 14px;
+}
+.slide2>div>p>sup{
+	font-size: .5em;
+}
+.slide2>div>p span{
+	color: rgb(231, 69, 154);
+	font-weight: bold;
+
+}
+div.output{
+
+	margin: 0;
+	margin-top: 2px;
+	width: 100%;
+}
+.output section{
+	color: white;
+	padding: 6px 5px 8px 10px;
+	padding-left: 10px;
+	padding-right: 5px;
+}
+.output section:first-of-type{
+	height: 31px;
+	background-color: -webkit-linear-gradient(top, rgba(192, 191, 191, .8), rgba(173,172,171, .8));
+	padding: 0;
+	margin-top: 3px;
+}
+.output section:first-of-type p{
+	float: left;
+	margin: 1px 0 0 18px;
+	font-size: 1.1em;
+}
+.output section:first-of-type input{
+	float: right;
+	width: 80px;
+	margin-top: 2px;
+	margin-right: 11px;
+	padding: 0 5px;
+	text-align: right;
+	font-size: 1.1em;
+	font-weight: bold;
+	color: rgb(231, 69, 154);
+}
+.output section:first-of-type input::-webkit-input-placeholder{
+	text-align: right;
+	font-size: 1.1em;
+	font-weight: bold;
+	color: rgb(231, 69, 154);
+}
+.output .help{
+	float: left;
+	width: 21px;
+	height: 21px;
+	font-size: 1em;
+	margin-top: 2px;
+}
+.output p {
+	font-size: .55em;
+	margin: 0 0 0 23px;
+}
+.slide2 .foterSlide2{
+	width: 84%;
+	
+	margin-top: 5px;
+	clear: both;
+	
+}
+.slide2 .foterSlide2 h3{
+	display: block;
+	width: 96.5%;
+	margin: 0;
+	padding: 10px 15px;
+	background: rgb(80, 45, 128);
+	font-size: 1.5em;
+	color: white;
+}
+.slide2 .foterSlide2 section{
+	width: 21.4%;
+	font-size: .85em;
+	background: rgba(255, 255, 255, .5);
+	float: left;
+	margin-right: 6px;
+}
+.slide2 .foterSlide2 section:nth-of-type(2){
+	width: 23%;
+}
+.slide2 .foterSlide2 section:last-of-type{
+	margin-right: 0;
+}
+.slide2 .foterSlide2 section p{
+	margin: 5px 0;
+	color: rgb(124,122,123);
+}
+.slide2 .foterSlide2 section input{
+	background: inherit;
+	border-width: 0;
+	font-size: 1.3em;
+
+	color: rgb(227, 30, 134);
+	
+}
+.slide2 .foterSlide2 section input::-webkit-input-placeholder{
+	color: rgb(227, 30, 134);
+	
 }

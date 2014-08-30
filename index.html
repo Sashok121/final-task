@@ -22,7 +22,7 @@
 	<div id = "slyders">
 		<div class = "slyder slide1">
 			<h2>Xarelto<sup>®</sup>: An Effective Treatment Option <br>in Your VTE Patients with Cancer<sup>a,8</sup></h2>
-			<div class = "">
+			<div >
 				<h3>% patients<sup>b</sup></h3>
 				<section>
 					<span>HR 0.69;<br>95% CI 0.36 - 1.33</span>
@@ -86,14 +86,129 @@
 		</div>
 		<div class = "slyder slide2">
 			<h2>Xarelto<sup>®</sup> Estimator of Resources Saved</h2>
-			<div></div>
-			<div></div>
+			<div>
+				<section class = "input">
+					<input type = "text"  placeholder="Enter number of DVT patients here" data-bind = "value: DVT_val"/>
+					<button>CALCULATE</button>
+					<button class = "help">?</button>
+				</section>
+				<p>Assumptions to estimate calculations: proportion of patients with DVT contraindicated for Xarelto or LMWH/VKA<sup>1,2</sup> = 7.5%</p>
+				<p><strong>Number of patients with DVT - 7.5% =</strong><span>[A]</span> Total number of DVT patients eligible for dual LMWH/VKA or Xarelto</p>
+				<div class = "output">
+					<section>
+						<p>Injections avoided<sup>3-7</sup></p>
+						<input type = "text"  placeholder="[B+C]" readonly data-bind ="value: DVT_inject_Avoid"/>
+					</section>
+					<section>
+						<button class = "help">+</button>
+						<p>Injections avoided = number of LMWH injection received by cancer patients with DVT + LMWH injections received by DVT patients without cancer</p>
+					</section>
+				</div>				
+				<div class = "output">
+					<section>
+						<p>INR clinic visitsavoided<sup>3,7,8</sup></p>
+						<input type = "text"  placeholder="[E]" readonly data-bind="value : DVT_INR_clinic"/>
+					</section>
+					<section>
+						<button class = "help">+</button>
+						<p>INR clinic visits avoided = number of DVT patients eligble for VKA  treatment x number or INR monitaring visits per patient </p>
+					</section>
+				</div>
+				<div class = "output">
+					<section>
+						<p>Nurse visits avoided<sup>9</sup></p>
+						<input type = "text"  placeholder="[G]" readonly data-bind ="value: DVT_nurce_visits"/>
+					</section>
+					<section>
+						<button class = "help">+</button>
+						<p>Nurse assistance visits avoided = number of non-cancer DVT patients eligible for initial LMWH treatment x proportion of these patients treated by nurses in their own homes x mean number of LMWH injections administered</p>
+					</section>
+				</div>
+				<div class = "output">
+					<section>
+						<p>Hospital bed days saved<sup>10</sup></p>
+						<input type = "text"  placeholder="[H]" readonly data-bind = "value: DVT_hospital_days"/>
+					</section>
+					<section>
+						<button class = "help">+</button>
+						<p>Hospital bed days saved = number of eligible DVT patients x proportion of DVT patients hospitalised x number of hospital bed days saved per DVT patient treated with Xarelto</p>
+					</section>
+				</div>
+
+			</div>
+			<div>
+				<section class = "input">
+					<input type = "text" placeholder="Enter number of patients with PE here" data-bind = "value: PE_val"/>
+					<button>CALCULATE</button>
+					<button class = "help">?</button>
+				</section>
+				<p>Assumptions to estimate calculations: proportion of patients with DVT contraindicated for Xarelto or LMWH/VKA<sup>1,2</sup> = 15%</p>
+				<p><strong>Mumber of patients with PE - 15% =</strong><span>[A]</span> Total number of PE patients eligible for dual LMWH/VKA or Xarelto</p>
+				<div class = "output">
+					<section>
+						<p>Injections avoided<sup>3-7,11</sup></p>
+						<input type = "text"  placeholder="[B+C]" readonly data-bind="value: PE_inject_Avoid"/>
+					</section>
+					<section>
+						<button class = "help">+</button>
+						<p>Injections avoided = number of LMWH injection received by cancer patients with PE + LMWH injections received by PE patients without cancer</p>
+					</section>
+				</div>
+
+				<div class = "output">
+					<section>
+						<p>INR clinic visits avoided<sup>3,8,11</sup></p>
+						<input type = "text"  placeholder="[I]" readonly data-bind="value:PE_INR_clinic"/>
+					</section>
+					<section>
+						<button class = "help">+</button>
+						<p>INR clinic visits avoided = number of PE patients eligible for VKA treatment x number of INR monitoring visits per patient</p>
+					</section>
+				</div>
+
+				<div class = "output">
+					<section>
+						<p>Hospital bed days saved<sup>10</sup></p>
+						<input type = "text"  placeholder="[J]" readonly data-bind="value:PE_hospital_days"/>
+					</section>
+					<section>
+						<button class = "help">+</button>
+						<p>Hospital bed days saved = number of eligible PE patients xproportion of PE patients hospitalised x number of hospital bed days saved per PE patient treated with Xarelto</p>
+					</section>
+				</div>
+			</div>
+			<div class ="foterSlide2">
+				<h3>Combined DVT + PE Resource Saved</h3>
+				<section>
+					<p>Injections avoided<sup>3-7,11</sup></p>
+					<input data-bind="value:sum_Combined" readonly placeholder="[DVT + PE]"/>
+				</section>
+
+
+				<section>
+					<p>INR clinic visits avoided<sup>3,7,8,11</sup></p>
+					<input data-bind="value:sum_INR_clinic" readonly placeholder="[DVT + PE]"/>
+				</section>
+				<section>
+					<p>Nurse visits avoided<sup>9</sup></p>
+					<input data-bind="value:sum_nurceVisits" readonly placeholder="[DVT]"/>
+				</section>
+				<section>
+					<p>Hospital bed days saved<sup>10</sup></p>
+					<input data-bind="value:sum_hospital_days" readonly placeholder="[DVT + PE]"/>
+				</section>
+				<p>Numbers provided are based on general epidemiological research and on clinical trial experience from the Phase III programme with Xarelto. Healthcare practice may be different in your country (both before and after introduction of Xarelto), and thus the estimation may not reflect your country’s perspective. Actual costs are not included.</p>
+			</div>
 			
 		</div>
-		<div class = "slyder slide3"></div>
+		<div class = "slyder slide3">
+			<h2>
+				Xarelto<sup>®</sup> DVT Patients Reported Higher Satisfaction<sup>a,16</sup>
+			</h2>
+		</div>
 
 	</div>
-	
+	<script src="scripts/knockout-3.1.0.js"></script>
 	<script src = "scripts/script.js"></script>
 </body>
 </html>
