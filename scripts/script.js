@@ -26,6 +26,18 @@ var slyders= {
 		}, 15);
 		
 	},
+	competitorClick : function(index){
+		var slide3 = document.getElementById('slyders').getElementsByClassName("slide3")[0];
+		if (index == 0) {
+			slide3.getElementsByClassName("competitor1")[0].style.transform = "rotate(0deg)";		
+		slide3.getElementsByClassName("shalka")[0].style.top = "150px";
+		slide3.getElementsByClassName("shalka")[1].style.top = "150px";
+		}else{	
+		slide3.getElementsByClassName("competitor1")[0].style.transform = "rotate("+9*(index)+"deg)";		
+		slide3.getElementsByClassName("shalka")[0].style.top = slide3.getElementsByClassName("shalka")[0].offsetTop- index * 20 + "px";
+		slide3.getElementsByClassName("shalka")[1].style.top = slide3.getElementsByClassName("shalka")[1].offsetTop+ index * 20+"px";
+		}
+	},
 	chenge : function(lastIndex, index){
 		if (lastIndex != index){
 			var that = this;
@@ -76,7 +88,8 @@ var slyders= {
 					case "slide1": {
 						that.bars.forEach(function(bar){
 							that.barChenge(bar);
-						});			
+						});	
+						break;		
 					}
 					case 'slide2':{
 						[].forEach.call(that.slides[index].getElementsByClassName("input"), function(valInput){
@@ -84,6 +97,12 @@ var slyders= {
 								input.value = '';
 							});
 						});
+						break;
+					}
+					case 'slide3':{
+						
+						slyders.sup = 0;
+						slyders.competitorClick(0);
 					}
 				} 
 				 
@@ -242,5 +261,23 @@ function SlidesViewModel(){
 			return (PE_hospital_days + DVT_hospital_days) ;
 		}		
 	},this);
+	slyders.sub = 0;
+
+	
+	this.xareltoClick = function(type){
+		if (slyders.sub > -1) {
+			slyders.sub -= 1;
+			slyders.competitorClick(slyders.sub);
+			
+		};
+		
+	}
+	this.vkatoClick = function(type){
+		if (slyders.sub < 1) {
+			slyders.sub += 1;	
+			slyders.competitorClick(slyders.sub);
+				
+		};
+	}
 }
 ko.applyBindings(new SlidesViewModel());
