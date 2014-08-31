@@ -10,33 +10,26 @@
 	font-family: "Frutiger47Cn";
 	src: url(fonts/frutiger-47-light-condensed1.ttf);
 }
-
-
-
-
 body{
 	font-family: "FrutigerLTStd";
 	width: 1024px;
 	margin: 0 auto;
 	background-color: white;
 	background-position: center top;
-	background-repeat: no-repeat;
-	
+	background-repeat: no-repeat;	
 	background-image: url(../assets/images/bk.png);
-
 }
 header{
 	min-height: 65px;
 }
 nav{	
-	background-image: -webkit-linear-gradient(top, rgb(251, 251, 251), rgb(232, 232, 232));
-	
+	background-image: -webkit-linear-gradient(top, rgb(251, 251, 251), rgb(232, 232, 232));	
 	box-shadow: rgba(0,0,0,.21) 0px 1px 2px;	
 }
 nav ul{	
-height: 42px;
-margin: 0;
-padding: 0;
+	height: 42px;
+	margin: 0;
+	padding: 0;
 }
 nav ul li{
 	display: inline-block;
@@ -59,8 +52,7 @@ li.home{
 }
 nav ul li:hover, nav ul li.activity{
 	cursor: pointer;
-	background-image: -webkit-linear-gradient(top, rgb(239, 239, 239), rgb(255, 255, 255));
-	
+	background-image: -webkit-linear-gradient(top, rgb(239, 239, 239), rgb(255, 255, 255));	
 }
 .closeNav{	
 	height: 5px;	
@@ -118,8 +110,6 @@ nav ul li:hover, nav ul li.activity{
 	font-weight: bold;
 	margin: 57px 0 0 60px;
 	float: left;
-	
-
 }
 .slide1>div section{
 	width: 597px;
@@ -223,8 +213,6 @@ div.bar{
 	font-size: .65em;
 	margin:0; 
 	display: none;
-
-
 }
 .bar p:last-of-type{
 	width: 60%;
@@ -315,7 +303,6 @@ div.bar{
 .slide2>div>p span{
 	color: rgb(231, 69, 154);
 	font-weight: bold;
-
 }
 div.output{
 
@@ -405,9 +392,7 @@ div.output{
 	background: inherit;
 	border-width: 0;
 	font-size: 1.3em;
-
-	color: rgb(227, 30, 134);
-	
+	color: rgb(227, 30, 134);	
 }
 .slide2 .foterSlide2 section input::-webkit-input-placeholder{
 	color: rgb(227, 30, 134);	
@@ -426,8 +411,7 @@ div.output{
 	width: 97px;
 	height: 60px;
 	position: absolute;
-	right: -1px;
-	
+	right: -1px;	
 	bottom: -72px;
 	padding: 5px;
 	background: inherit;
@@ -438,13 +422,7 @@ div.output{
 }
 .slide3>div>section{
 	display: inline-block;
-	min-height: 55px;
-	min-width: 55px;
-	
-
-
 }
-
 .slide3>div>section:first-of-type figure{
 	position: relative;
 	width: 6px;
@@ -520,14 +498,13 @@ div.output{
 }
 .slide3 .shalka{
 	position: absolute;
+
 	
 	width: 150px;
 	height: 40px;
 	margin: 0;
 	top: 150px;
 	left: -60px;
-	
-
 }
 .slide3 .shalka:before{
 	content: "";
@@ -539,7 +516,6 @@ div.output{
 	border-top: 3px solid rgb(255, 0, 144);
 	z-index: 1;
 	transform: rotate(-63deg);
-
 }
 .slide3 .shalka:after{
 	content: "";

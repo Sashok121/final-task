@@ -15,8 +15,6 @@ var slyders= {
 				
 			}
 			else{
-				//bar.style.height = bar.maxHeight+"%";
-				
 				[].forEach.call(barP, function(valueP){
 					valueP.style.display = "block"
 				});				
@@ -102,7 +100,7 @@ var slyders= {
 						});
 						break;
 					}
-					case 'slide3':{						
+					case 'slide3':{
 						slyders.sup = 0;
 						slyders.competitorClick(0);
 					}
