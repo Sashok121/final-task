@@ -26,6 +26,18 @@ var slyders= {
 		}, 15);
 		
 	},
+	competitorClick : function(index){
+		var slide3 = document.getElementById('slyders').getElementsByClassName("slide3")[0];
+		if (index == 0) {
+			slide3.getElementsByClassName("competitor1")[0].style.transform = "rotate(0deg)";		
+		slide3.getElementsByClassName("shalka")[0].style.top = "150px";
+		slide3.getElementsByClassName("shalka")[1].style.top = "150px";
+		}else{	
+		slide3.getElementsByClassName("competitor1")[0].style.transform = "rotate("+9*(index)+"deg)";		
+		slide3.getElementsByClassName("shalka")[0].style.top = slide3.getElementsByClassName("shalka")[0].offsetTop - index * 20 + "px";
+		slide3.getElementsByClassName("shalka")[1].style.top = slide3.getElementsByClassName("shalka")[1].offsetTop + index * 20+"px";
+		}
+	},
 	chenge : function(lastIndex, index){
 		if (lastIndex != index){
 			var that = this;
@@ -76,14 +88,23 @@ var slyders= {
 					case "slide1": {
 						that.bars.forEach(function(bar){
 							that.barChenge(bar);
-						});			
+						});	
+						break;		
 					}
 					case 'slide2':{
 						[].forEach.call(that.slides[index].getElementsByClassName("input"), function(valInput){
 							[].forEach.call(valInput.getElementsByTagName("input"), function(input){
 								input.value = '';
+								input.onclick = function(event){									
+									event.target.focus();									
+								}
 							});
 						});
+						break;
+					}
+					case 'slide3':{						
+						slyders.sup = 0;
+						slyders.competitorClick(0);
 					}
 				} 
 				 
@@ -93,20 +114,21 @@ var slyders= {
 	}	
 				
 }
-/*document.getElementById('slyders').getElementsByTagName('input').onclick = function(event){
+//---------------------------------------------------------------------------------------------
+document.getElementById('slyders').getElementsByTagName('input').onclick = function(event){
 	console.log("input");
 }
 document.getElementById('slyders').onmousedown = function(event){
 	var thumbCoords = document.getElementById('slyders').getBoundingClientRect();
 	var shiftX = event.pageX - thumbCoords.left;
-    	document.onmousemove = function(event){
+    	document.getElementById('slyders').onmousemove = function(event){
     	
   		var newLeft = event.pageX - thumbCoords.left;
   		if((newLeft-shiftX)<-100){
   			
   			if ((slyders.lastActivIndex + 1) < (slyders.slides.length)) {	  			
 	  		 	slyders.chenge(slyders.lastActivIndex, slyders.lastActivIndex+1);
-	  		 	document.onmousemove = document.onmouseup = null;
+	  		 	document.getElementById('slyders').onmousemove = document.getElementById('slyders').onmouseup = null;
 	  		 	slyders.lastActivIndex = slyders.lastActivIndex+1;	
   			};
   		 	
@@ -114,22 +136,22 @@ document.getElementById('slyders').onmousedown = function(event){
   		if((newLeft-shiftX)>100){
   		 	if ((slyders.lastActivIndex - 1) >=  0) {	  			
 	  		 	slyders.chenge(slyders.lastActivIndex, slyders.lastActivIndex - 1);
-	  		 	document.onmousemove = document.onmouseup = null;
+	  		 	document.getElementById('slyders').onmousemove = document.getElementById('slyders').onmouseup = null;
 	  		 	slyders.lastActivIndex = slyders.lastActivIndex-1;	
   			};
   		}
   		
   	}
   	
-  	document.onmouseup = function() {
-    document.onmousemove = document.onmouseup = null;
+  	document.getElementById('slyders').onmouseup = function() {
+   document.getElementById('slyders').onmousemove = document.getElementById('slyders').onmouseup = null;
   };
   
-console.log(this);
+
   return false;
 	
-}*/
-
+}
+//-------------------------------------------------------------------------------------
 function SlidesViewModel(){
 	//скрывать меню
 	var ul = document.getElementsByTagName('ul'),
@@ -242,5 +264,23 @@ function SlidesViewModel(){
 			return (PE_hospital_days + DVT_hospital_days) ;
 		}		
 	},this);
+	slyders.sub = 0;
+
+	
+	this.xareltoClick = function(type){
+		if (slyders.sub > -1) {
+			slyders.sub -= 1;
+			slyders.competitorClick(slyders.sub);
+			
+		};
+		
+	}
+	this.vkatoClick = function(type){
+		if (slyders.sub < 1) {
+			slyders.sub += 1;	
+			slyders.competitorClick(slyders.sub);
+				
+		};
+	}
 }
 ko.applyBindings(new SlidesViewModel());

@@ -30,7 +30,7 @@ header{
 }
 nav{	
 	background-image: -webkit-linear-gradient(top, rgb(251, 251, 251), rgb(232, 232, 232));
-	background-image: linear-gradient(top, rgb(251, 251, 251), rgb(232, 232, 232));
+	
 	box-shadow: rgba(0,0,0,.21) 0px 1px 2px;	
 }
 nav ul{	
@@ -60,7 +60,7 @@ li.home{
 nav ul li:hover, nav ul li.activity{
 	cursor: pointer;
 	background-image: -webkit-linear-gradient(top, rgb(239, 239, 239), rgb(255, 255, 255));
-	background-image: linear-gradient(top, rgb(239, 239, 239), rgb(255, 255, 255));
+	
 }
 .closeNav{	
 	height: 5px;	
@@ -108,11 +108,11 @@ nav ul li:hover, nav ul li.activity{
 	margin: 0 auto;
 	text-align: center;
 }
-.slyder div{
+.slyder>div{
 	margin-top: 88px;
 	
 }
-.slyder div h3{
+.slyder>div h3{
 	display: inline;
 	font-size: .9em;
 	font-weight: bold;
@@ -121,7 +121,7 @@ nav ul li:hover, nav ul li.activity{
 	
 
 }
-.slide1 div section{
+.slide1>div section{
 	width: 597px;
 	height: 360px;
 	float: left;
@@ -410,6 +410,198 @@ div.output{
 	
 }
 .slide2 .foterSlide2 section input::-webkit-input-placeholder{
-	color: rgb(227, 30, 134);
+	color: rgb(227, 30, 134);	
+}
+.slide3>div{
+	width: 85%;
+	margin-top: 50px;
+	position: relative; 
+	background: rgba(255, 255, 255, .6);
+	padding: 30px 40px 0;
+	border: 1px solid grey;
 	
+}
+.slide3>div:after{
+	content: "TSQM II Global Satisfaction";
+	width: 97px;
+	height: 60px;
+	position: absolute;
+	right: -1px;
+	
+	bottom: -72px;
+	padding: 5px;
+	background: inherit;
+	text-align: center;
+	color: rgb(91, 44, 129); 
+	border: 1px solid grey;
+	border-top-color: rgba(255, 255, 255, .9);
+}
+.slide3>div>section{
+	display: inline-block;
+	min-height: 55px;
+	min-width: 55px;
+	
+
+
+}
+
+.slide3>div>section:first-of-type figure{
+	position: relative;
+	width: 6px;
+	height: 210px;
+	margin: 0 60px;
+	background-image: -webkit-linear-gradient(bottom, rgb(23, 133, 163), rgb(255,0,144));
+}
+.slide3>div>section:first-of-type figure:before{
+	content: "";
+	width: 0;
+	height: 0;
+	position: absolute;
+	left: -7px;
+	top: -14px;
+	border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 15px solid rgb(255,0,144);
+}
+.slide3>div>section:first-of-type figure:after{
+	content: "";
+	width: 0;
+	height: 0;
+	position: absolute;
+	left: -7px;
+	bottom: -14px;
+	border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 15px solid rgb(23, 133, 163);
+}
+.slide3>div>section:nth-of-type(2) {
+	height: 260px;
+	width: 280px;
+	position: relative;
+	margin: 0 0 0 100px;
+	
+}
+.slide3>div>section:nth-of-type(2) p{
+	width: 70px;
+	color: white;
+	position: absolute;
+	bottom: 0;
+	left: 22%;
+	margin: 0;
+	padding: 5px 40px;
+	background: rgb(91, 44,129);
+	z-index: 2;
+}
+
+.slide3 .competitor1{
+	position: relative;
+	height: 10px;
+	width: 100%;
+	margin: 0;
+	background: -webkit-linear-gradient(left, rgb(91, 44,129), rgb(120, 100, 167) ,rgb(91, 44,129));
+	z-index: 2;
+}
+.slide3 .competitor2{
+	position: relative;
+	width: 21px;
+	height: 90%;
+	margin: 14px 46.43% 0;
+	background: -webkit-linear-gradient(top, rgb(91, 44,129), rgb(120, 100, 167) ,rgb(91, 44,129));
+	z-index: 2;
+}
+.slide3 .competitor2:before{
+	content: "";
+	position: absolute;
+	top: -14px;
+	left: 0;
+	border-left: 11px solid transparent;
+	border-right: 11px solid transparent;
+	border-bottom: 15px solid rgb(91, 44,129);
+}
+.slide3 .shalka{
+	position: absolute;
+	
+	width: 150px;
+	height: 40px;
+	margin: 0;
+	top: 150px;
+	left: -60px;
+	
+
+}
+.slide3 .shalka:before{
+	content: "";
+	position: absolute;
+	width: 165px;
+	height: 1px;
+	top: -74px;
+	left: -43px;
+	border-top: 3px solid rgb(255, 0, 144);
+	z-index: 1;
+	transform: rotate(-63deg);
+
+}
+.slide3 .shalka:after{
+	content: "";
+	position: absolute;
+	width: 165px;
+	height: 1px;
+	top: -74px;
+	right: -43px;
+	border-top: 3px solid rgb(255, 0, 144);
+	z-index: 1;
+	transform: rotate(63deg);
+}
+.slide3 .shalka div{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+	margin: 0;
+	z-index: 2;
+}
+.slide3 .shalka span{
+	position: absolute;
+	display: block;
+	width: 21%;
+	height: 94%;
+	bottom: 0;
+	left: -4px;
+	padding: 78px 63px 0;
+	border-radius: 50%;
+	background-color: rgb(255, 0, 144);
+	color: white;
+}
+.slide3 .shalkaRight{
+	right: -60px;
+	left: inherit;
+}
+.slide3 .shalkaRight:before,
+.slide3 .shalkaRight:after{
+	border-color: rgb(22, 133, 162);
+}
+.slide3 .shalkaRight span{
+	background-color: rgb(22, 133, 162);
+}
+.slide3>div>section:last-of-type{
+	position: absolute;
+	top: 25px;
+	right: 40px;
+
+}
+.slide3>div>section:last-of-type section:hover{
+	cursor: pointer;
+}
+.slide3>div>section:last-of-type div{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background: rgb(255, 0, 144);
+}
+.slide3>div>section:last-of-type div.vka{
+	background-color: rgb(22, 133, 162);
+}
+.slide3>div>section:last-of-type p{
+	display: inline-block;
+	margin: 0 0 2px;
 }
